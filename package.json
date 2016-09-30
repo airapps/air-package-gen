@@ -1,5 +1,5 @@
 {
-  "name": "react-native-create-library",
+  "name": "air-package-gen",
   "version": "1.0.4",
   "description": "Tool to create a React Native library with a single command",
   "bin": "cli.js",

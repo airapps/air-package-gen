@@ -8,9 +8,9 @@ const templates = require('./templates');
 const { hasPrefix, createFile, createFolder } = require('./utils');
 
 const DEFAULT_NAME = 'Library';
-const DEFAULT_PREFIX = 'RN';
-const DEFAULT_MODULE_PREFIX = 'react-native';
-const DEFAULT_PACKAGE_IDENTIFIER = 'com.reactlibrary';
+const DEFAULT_PREFIX = 'Air';
+const DEFAULT_MODULE_PREFIX = 'air';
+const DEFAULT_PACKAGE_IDENTIFIER = 'cn.airapps';
 const DEFAULT_PLATFORMS = ['android', 'ios', 'windows'];
 
 module.exports = ({
@@ -39,10 +39,10 @@ module.exports = ({
     throw new Error('Please specify at least one platform to generate the library.');
   }
 
-  if (prefix === 'RN') {
-    console.warn(`While \`RN\` is the default prefix,
-  it is recommended to customize the prefix.`);
-  }
+  //if (prefix === 'RN') {
+  //  console.warn(`While \`RN\` is the default prefix,
+  //it is recommended to customize the prefix.`);
+  //}
 
   return Promise.all(templates.filter(template => {
     if (template.platform) {

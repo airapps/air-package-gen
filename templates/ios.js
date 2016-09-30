@@ -1,6 +1,39 @@
 /* eslint max-len: 0 */
 
 module.exports = platform => [{
+	name:({name}) =>`${platform}/${name}.podspec`,
+  content: ({ name }) => `
+Pod::Spec.new do |s|
+  s.name         = "${name}"
+  s.version      = "1.0.0"
+  s.summary      = "${name} Package"
+
+  # This description is used to generate tags and improve search results.
+  #   * Think: What does it do? Why did you write it? What is the focus?
+  #   * Try to keep it short, snappy and to the point.
+  #   * Write the description between the DESC delimiters below.
+  #   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.description  = <<-DESC
+                  ${name} Package
+                   DESC
+
+  s.homepage     = "http://www.airapps.cn/package/${name}"
+  s.license      = "MIT"
+  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.author             = { "author" => "author@airapps.cn" }
+  s.platform     = :ios, "7.0"
+  s.source       = { :git => "https://github.com/airapps/${name}.git", :tag => "master" }
+  s.source_files  = "${name}/**/*.{h,m}"
+  s.requires_arc = true
+
+
+  s.dependency "React"
+  #s.dependency "others"
+
+end
+
+  `,
+},{
   name: ({ name }) => `${platform}/${name}.h`,
   content: ({ name }) => `
 #import "RCTBridgeModule.h"
