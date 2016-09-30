@@ -21,8 +21,26 @@ android {
     }
 }
 
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.0'
+    }
+}
+
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "$projectDir/../../react-native/android" }
+    }
+}
+
 dependencies {
-    compile 'com.facebook.react:react-native:0.20.+'
+    compile 'com.facebook.react:react-native:+'
 }
   `,
 }, {
