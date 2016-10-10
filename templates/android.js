@@ -22,16 +22,6 @@ android {
 }
 
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
-    }
-}
-
-
 allprojects {
     repositories {
         jcenter()
